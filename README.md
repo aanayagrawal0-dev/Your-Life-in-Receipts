@@ -57,13 +57,7 @@ npm run lint         # oxlint
 
 This is a static site (`dist/` after `npm run build`) with no backend, so
 any static host works:
-
-- **Vercel**: `npx vercel` (or connect the repo in the Vercel dashboard) &mdash;
-  it auto-detects Vite.
-- **Netlify**: drag-and-drop the `dist/` folder onto app.netlify.com/drop,
-  or `netlify deploy --prod --dir=dist`.
-- **GitHub Pages**: push `dist/` to a `gh-pages` branch, or use the
-  `actions/deploy-pages` workflow with `npm run build` as the build step.
+Deployed Link : https://your-life-in-receipts-o6o3luwtc-aanayagrawal0-dev.vercel.app/
 
 ## Tech
 
