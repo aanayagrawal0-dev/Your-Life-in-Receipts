@@ -1,0 +1,90 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform var(--exit-ms, 800ms) cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.exiting {
+  transform: translateY(-100%);
+}
+
+.stage {
+  padding: 0 1.25rem;
+  text-align: center;
+}
+
+.cycleWord {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.4rem, 5vw, 2.4rem);
+  letter-spacing: 0.02em;
+  margin: 0;
+  animation: cycleIn 320ms ease-out;
+}
+
+@keyframes cycleIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.finalWord {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 6vw, 3.2rem);
+  letter-spacing: 0.01em;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(var(--dy)) rotate(var(--rot));
+  animation: charIn 620ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes charIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.skipHint {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-faint);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.skipHint:hover {
+  color: var(--text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay {
+    display: none;
+  }
+}

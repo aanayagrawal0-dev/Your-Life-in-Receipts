@@ -1,0 +1,17 @@
+.wrap {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    color-mix(in srgb, var(--surface) 65%, transparent)
+  );
+  border: 1px solid var(--border);
+}
+
+.canvas {
+  display: block;
+  width: 100%;
+}

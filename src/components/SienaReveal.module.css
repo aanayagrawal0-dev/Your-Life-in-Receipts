@@ -1,0 +1,129 @@
+.wrap {
+  position: relative;
+  height: 220vh;
+  scroll-snap-align: start;
+}
+
+.wrapStatic {
+  height: 100vh;
+}
+
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse 70% 60% at 50% 30%, color-mix(in srgb, var(--accent) 14%, var(--bg)), var(--bg) 65%);
+  isolation: isolate;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.portrait {
+  position: absolute;
+  width: clamp(140px, 20vw, 260px);
+  height: clamp(140px, 20vw, 260px);
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(0.55) contrast(1.08) brightness(0.9);
+  opacity: 0.85;
+}
+
+.portrait[data-slot='0'] {
+  top: 8%;
+  left: 10%;
+}
+.portrait[data-slot='1'] {
+  top: 14%;
+  right: 8%;
+}
+.portrait[data-slot='2'] {
+  bottom: 10%;
+  left: 16%;
+}
+.portrait[data-slot='3'] {
+  bottom: 6%;
+  right: 14%;
+}
+
+.focusVeil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  /* Prefixed fallback first, standard property last — the standard one
+     wins in any browser that understands both. (The build's CSS minifier
+     was observed to collapse these into a single declaration when the
+     standard property came first, dropping it entirely.) */
+  -webkit-backdrop-filter: blur(26px) brightness(0.55) saturate(0.75);
+  backdrop-filter: blur(26px) brightness(0.55) saturate(0.75);
+}
+
+.titleBlock {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 0 1.25rem;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  max-width: 16ch;
+  color: var(--text);
+}
+
+.playButton {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--bg) 55%, transparent);
+  border: 1px solid var(--border);
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  margin-top: 0.4rem;
+}
+
+.playButton:hover {
+  transform: scale(1.06);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.playIcon {
+  font-size: 1.4rem;
+  margin-left: 4px;
+}
+
+.bestViewed {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 640px) {
+  .portrait {
+    width: clamp(100px, 26vw, 160px);
+    height: clamp(100px, 26vw, 160px);
+  }
+}

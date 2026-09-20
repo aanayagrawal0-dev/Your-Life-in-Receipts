@@ -1,0 +1,181 @@
+:root {
+  --bg: #252a34;
+  --surface: #2e3440;
+  --surface-2: #363d4b;
+  --surface-3: #3f4759;
+  --border: #454d5f;
+  --text: #eaeaea;
+  --text-muted: #a8adb8;
+  --text-faint: #767c8a;
+  --accent: #08d9d6;
+  --accent-strong: #057e7c;
+  --accent-contrast: #14181f;
+  --amber: #e0ac4f;
+  --rose: #ff2e63;
+  --focus-ring: #ff2e63;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 8px 24px rgba(0, 0, 0, 0.35);
+
+  --container: 1180px;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    --bg: #eaeaea;
+    --surface: #ffffff;
+    --surface-2: #f2f2f2;
+    --surface-3: #e3e3e3;
+    --border: #d3d3d3;
+    --text: #252a34;
+    --text-muted: #565b68;
+    --text-faint: #888d99;
+    --accent: #027877;
+    --accent-strong: #015f5e;
+    --accent-contrast: #ffffff;
+    --amber: #b5791f;
+    --rose: #e0184a;
+    --focus-ring: #e0184a;
+    --shadow-1: 0 1px 2px rgba(20, 15, 40, 0.08);
+    --shadow-2: 0 10px 30px rgba(20, 15, 40, 0.12);
+    color-scheme: light;
+  }
+}
+
+:root[data-theme='light'] {
+  --bg: #eaeaea;
+  --surface: #ffffff;
+  --surface-2: #f2f2f2;
+  --surface-3: #e3e3e3;
+  --border: #d3d3d3;
+  --text: #252a34;
+  --text-muted: #565b68;
+  --text-faint: #888d99;
+  --accent: #027877;
+  --accent-strong: #015f5e;
+  --accent-contrast: #ffffff;
+  --amber: #b5791f;
+  --rose: #e0184a;
+  --focus-ring: #e0184a;
+  --shadow-1: 0 1px 2px rgba(20, 15, 40, 0.08);
+  --shadow-2: 0 10px 30px rgba(20, 15, 40, 0.12);
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* The whole site is one continuous scroll of stacked sections now —
+     proximity (not mandatory) settles at section boundaries without
+     trapping the user mid-scroll inside a long section like Chapters or
+     Explore. scroll-padding-top keeps the sticky header from covering the
+     top of whichever section a nav link or JourneyRibbon bar jumps to. */
+  scroll-snap-type: y proximity;
+  scroll-padding-top: 4rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--accent-strong);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 0 0 var(--radius-sm) 0;
+  z-index: 200;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

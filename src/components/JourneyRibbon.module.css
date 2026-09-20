@@ -1,0 +1,79 @@
+.wrap {
+  width: 100%;
+}
+
+.ribbon {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 160px;
+  padding: 0.5rem 0;
+  overflow-x: auto;
+}
+
+.bar {
+  flex: 1 0 auto;
+  min-width: 6px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.barFill {
+  width: 100%;
+  min-height: 4px;
+  background: var(--bar-color);
+  border-radius: 3px 3px 1px 1px;
+  opacity: 0.75;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.bar:hover .barFill,
+.bar:focus-visible .barFill {
+  opacity: 1;
+  transform: scaleY(1.03);
+}
+
+.spark {
+  position: absolute;
+  top: -8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--focus-ring);
+  box-shadow: 0 0 8px 2px var(--focus-ring);
+}
+
+.chapterLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+  font-size: 0.72rem;
+  color: var(--text-faint);
+}
+
+.chapterLabel {
+  flex: 1;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 2px;
+}
+
+@media (max-width: 640px) {
+  .ribbon {
+    height: 120px;
+  }
+  .chapterLabels {
+    display: none;
+  }
+}

@@ -1,0 +1,162 @@
+.wrap {
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.intro {
+  max-width: 62ch;
+  margin-bottom: 2.5rem;
+}
+
+.intro h1 {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.intro p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.glance {
+  padding-bottom: 1.5rem;
+}
+
+.glanceHeading {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.glanceHint {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  max-width: 60ch;
+  margin-bottom: 1.2rem;
+}
+
+.chapter {
+  padding: 2.2rem 0;
+  border-top: 1px solid var(--border);
+  scroll-margin-top: 5rem;
+}
+
+.chapterHeader {
+  margin-bottom: 1.4rem;
+}
+
+.chapterHeader h2 {
+  font-size: 1.7rem;
+  margin-bottom: 0.2rem;
+}
+
+.range {
+  color: var(--text-faint);
+  font-size: 0.85rem;
+  margin-bottom: 0.7rem;
+}
+
+.narrative {
+  color: var(--text-muted);
+  max-width: 68ch;
+  line-height: 1.6;
+}
+
+.scenes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.scene {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem;
+}
+
+.goldenScene {
+  border-color: var(--focus-ring);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--focus-ring) 40%, transparent);
+}
+
+.sceneFocused {
+  scroll-margin: 5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 0 2px var(--accent);
+  transition: box-shadow 0.25s ease;
+}
+
+.sceneHeader {
+  margin-bottom: 0.8rem;
+}
+
+.sceneTitle {
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+}
+
+.sceneReason {
+  color: var(--text-faint);
+  font-size: 0.78rem;
+}
+
+.sceneCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.6rem;
+}
+
+.loose {
+  margin-top: 1rem;
+  color: var(--text-faint);
+  font-size: 0.82rem;
+}
+
+.pairsBlock {
+  margin-top: 1.2rem;
+}
+
+.pairsToggle {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.pairsList {
+  list-style: none;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.4rem;
+}
+
+.pairRow {
+  width: 100%;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.pairRow span:first-child {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.pairItems {
+  color: var(--text-faint);
+  font-size: 0.76rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
